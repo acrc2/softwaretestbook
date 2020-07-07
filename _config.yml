@@ -1,0 +1,8 @@
+# Book settings
+title: IF811 - Testes
+author: The Jupyter Book Community
+logo: logo.png
+
+latex:
+  latex_documents:
+    targetname: book.tex
