@@ -12,4 +12,3 @@ o conteúdo deste notebook é geradoa com o suporte do [Jupyter Books](https://j
 - `/capitulos/numero_do_capitulo/secao` contem arquivos com conteudo de cada secao
 
 ### Instruções para adição de conteúdo à página
- 

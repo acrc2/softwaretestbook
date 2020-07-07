@@ -1,1 +1,6 @@
-file: chapter/1/content.md
+- file: chapters/1/content
+- file: chapters/2/content
+- file: chapters/3/content
+  sections: 
+  - file: chapters/3/sections/newSubject
+  - file: chapters/3/sections/otherSubject
