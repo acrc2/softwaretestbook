@@ -182,28 +182,21 @@
 <h3>Formato de configuração do <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code><a class="headerlink" href="#formato-de-configuracao-do-toc-yml" title="Permalink to this headline">¶</a></h3>
 <p>Na pasta chapters estão os arquivos ‘.md’ onde serão adicionados os arquivos que irão compor cada página</p>
 <p>Para configurar a navegação da página usamos os prefixos</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="o">-</span> <span class="n">file</span><span class="p">:</span> 
-   <span class="n">para</span> <span class="n">criar</span> <span class="n">uma</span> <span class="n">pagina</span> <span class="n">advinda</span> <span class="n">de</span> <span class="n">um</span> <span class="n">arquivo</span>
-   <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">chapters</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">content</span>
-   <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">chapters</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">content</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="o">//</span><span class="n">para</span> <span class="n">criar</span> <span class="n">uma</span> <span class="n">pagina</span> <span class="n">advinda</span> <span class="n">de</span> <span class="n">um</span> <span class="n">arquivo</span>
+   <span class="o">-</span> <span class="n">file</span><span class="p">:</span>
+
+   <span class="o">//</span><span class="n">para</span> <span class="n">criar</span> <span class="n">uma</span>  <span class="n">página</span> <span class="n">com</span> <span class="n">suas</span> <span class="n">respectivas</span> <span class="n">subseções</span> 
+   <span class="o">-</span> <span class="n">file</span><span class="p">:</span>
      <span class="n">sections</span><span class="p">:</span> 
-     <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">chapters</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">sections</span><span class="o">/</span><span class="n">newSubject</span>
-     <span class="o">-</span> <span class="n">file</span><span class="p">:</span> <span class="n">chapters</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="n">sections</span><span class="o">/</span><span class="n">otherSubject</span>
+     <span class="o">-</span> <span class="n">file</span><span class="p">:</span> 
+     <span class="o">-</span> <span class="n">file</span><span class="p">:</span> 
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/</span></code> contem os diretorios numeros respectivamente com cada capitulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/numero_do_capitulo</span></code> contem um arquivo <code class="docutils literal notranslate"><span class="pre">conteudo.md</span></code> que tem as informacoes iniciais do capitulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/numero_do_capitulo/secao</span></code> contem arquivos com conteudo de cada secao</p></li>
-</ul>
+<p>As páginas escritas em markdown estão na pasta ‘chapters’ com seus respectivos conteúdos para cada capítulo e suas subsessões</p>
 </div>
 </div>
 <div class="section" id="instrucoes-para-adicao-de-conteudo-a-pagina">
-<<<<<<< HEAD
 <h2>Instruções para adição de conteúdo à página<a class="headerlink" href="#instrucoes-para-adicao-de-conteudo-a-pagina" title="Permalink to this headline">¶</a></h2>
-=======
-<h3>Instruções para adição de conteúdo à página<a class="headerlink" href="#instrucoes-para-adicao-de-conteudo-a-pagina" title="Permalink to this headline">¶</a></h3>
->>>>>>> 21a8f3628f51e73e981343d3a0791e8853e6f11c
 <ul class="simple">
 <li><p>Primeiro execute o comando <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> para adicionar as dependências do projeto</p></li>
 <li><p>Após isso, basta alterar os arquivos presentes nos diretórios do padrão <code class="docutils literal notranslate"><span class="pre">/chapters/numero_do_capitulo/*.md</span></code> para modificar o conteúdo desejado no seu respectivo capítulo</p></li>

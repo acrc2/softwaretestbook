@@ -146,10 +146,14 @@
             <a href="#arquivos-de-configuracao-da-pagina" class="nav-link">Arquivos de configuração da pagina</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
-            <a href="#instrucoes-para-adicao-de-conteudo-a-pagina" class="nav-link">Instruções para adição de conteúdo à página</a>
+            <a href="#formato-de-configuracao-do-toc-yml" class="nav-link">Formato de configuração do _toc.yml</a>
         </li>
     
             </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#instrucoes-para-adicao-de-conteudo-a-pagina" class="nav-link">Instruções para adição de conteúdo à página</a>
         </li>
     
     </ul>
@@ -170,20 +174,33 @@
 <div class="section" id="arquivos-de-configuracao-da-pagina">
 <h2>Arquivos de configuração da pagina<a class="headerlink" href="#arquivos-de-configuracao-da-pagina" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> contem informacoes sobre titulo, autores e logo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> e a tabela de conteudo dos livros (table of contents), nela esta a estrurua de capitulos e secoes</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/</span></code> contem os diretorios numeros respectivamente com cada capitulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/numero_do_capitulo</span></code> contem um arquivo <code class="docutils literal notranslate"><span class="pre">conteudo.md</span></code> que tem as informacoes iniciais do capitulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/capitulos/numero_do_capitulo/secao</span></code> contem arquivos com conteudo de cada secao</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> contem informacoes gerais da página</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> arquivo onde são definidos os diretorios com os conteúdos de cada página como também a disposição delas no menu</p></li>
 </ul>
+<div class="section" id="formato-de-configuracao-do-toc-yml">
+<h3>Formato de configuração do <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code><a class="headerlink" href="#formato-de-configuracao-do-toc-yml" title="Permalink to this headline">¶</a></h3>
+<p>Na pasta chapters estão os arquivos ‘.md’ onde serão adicionados os arquivos que irão compor cada página</p>
+<p>Para configurar a navegação da página usamos os prefixos</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="o">//</span><span class="n">para</span> <span class="n">criar</span> <span class="n">uma</span> <span class="n">pagina</span> <span class="n">advinda</span> <span class="n">de</span> <span class="n">um</span> <span class="n">arquivo</span>
+   <span class="o">-</span> <span class="n">file</span><span class="p">:</span>
+
+   <span class="o">//</span><span class="n">para</span> <span class="n">criar</span> <span class="n">uma</span>  <span class="n">página</span> <span class="n">com</span> <span class="n">suas</span> <span class="n">respectivas</span> <span class="n">subseções</span> 
+   <span class="o">-</span> <span class="n">file</span><span class="p">:</span>
+     <span class="n">sections</span><span class="p">:</span> 
+     <span class="o">-</span> <span class="n">file</span><span class="p">:</span> 
+     <span class="o">-</span> <span class="n">file</span><span class="p">:</span> 
+</pre></div>
+</div>
+<p>As páginas escritas em markdown estão na pasta ‘chapters’ com seus respectivos conteúdos para cada capítulo e suas subsessões</p>
+</div>
+</div>
 <div class="section" id="instrucoes-para-adicao-de-conteudo-a-pagina">
-<h3>Instruções para adição de conteúdo à página<a class="headerlink" href="#instrucoes-para-adicao-de-conteudo-a-pagina" title="Permalink to this headline">¶</a></h3>
+<h2>Instruções para adição de conteúdo à página<a class="headerlink" href="#instrucoes-para-adicao-de-conteudo-a-pagina" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Primeiro execute o comando <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> para adicionar as dependências do projeto</p></li>
 <li><p>Após isso, basta alterar os arquivos presentes nos diretórios do padrão <code class="docutils literal notranslate"><span class="pre">/chapters/numero_do_capitulo/*.md</span></code> para modificar o conteúdo desejado no seu respectivo capítulo</p></li>
 <li><p>Feitas as alterações execute <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">./</span></code> para construir os indexes atualizados baseados no conteúdo atual</p></li>
 </ul>
-</div>
 </div>
 </div>
 
