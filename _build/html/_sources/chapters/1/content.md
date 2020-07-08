@@ -26,9 +26,16 @@ Para configurar a navegação da página usamos os prefixos
 - `/capitulos/numero_do_capitulo` contem um arquivo `conteudo.md` que tem as informacoes iniciais do capitulo
 - `/capitulos/numero_do_capitulo/secao` contem arquivos com conteudo de cada secao
 
+<<<<<<< HEAD
 ## Instruções para adição de conteúdo à página
+=======
+### Instruções para adição de conteúdo à página
+>>>>>>> 21a8f3628f51e73e981343d3a0791e8853e6f11c
 
 - Primeiro execute o comando `pip3 install -r requirements.txt` para adicionar as dependências do projeto
 - Após isso, basta alterar os arquivos presentes nos diretórios do padrão `/chapters/numero_do_capitulo/*.md` para modificar o conteúdo desejado no seu respectivo capítulo
 - Feitas as alterações execute `jupyter-book build ./` para construir os indexes atualizados baseados no conteúdo atual
+<<<<<<< HEAD
  
+=======
+>>>>>>> 21a8f3628f51e73e981343d3a0791e8853e6f11c
