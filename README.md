@@ -16,4 +16,7 @@ o conteúdo deste notebook é geradoa com o suporte do [Jupyter Books](https://j
 - Primeiro execute o comando `pip3 install -r requirements.txt` para adicionar as dependências do projeto
 - Após isso, basta alterar os arquivos presentes nos diretórios do padrão `/chapters/numero_do_capitulo/*.md` para modificar o conteúdo desejado no seu respectivo capítulo
 - Feitas as alterações execute `jupyter-book build ./` para construir os indexes atualizados baseados no conteúdo atual
+
+
+
  

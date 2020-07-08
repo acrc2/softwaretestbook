@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Conteúdo um &#8212; IF811 - Testes</title>
+    <title>Testes unitários em Jest &#8212; IF811 - Testes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css" type="text/css" />
@@ -30,7 +30,7 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Conteúdo dois" href="otherSubject.html" />
+    <link rel="next" title="Atividade dois" href="otherSubject.html" />
     <link rel="prev" title="Post de atividades" href="../content.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,10 +76,10 @@
     <a href="../content.html">Post de atividades</a>
   <ul class="nav sidenav_l2">
     <li class="active">
-      <a href="">Conteúdo um</a>
+      <a href="">Testes unitários em Jest</a>
     </li>
     <li class="">
-      <a href="otherSubject.html">Conteúdo dois</a>
+      <a href="otherSubject.html">Atividade dois</a>
     </li>
   </ul>
   </li>
@@ -160,9 +160,71 @@
         
               <div>
                 
-  <div class="section" id="conteudo-um">
-<h1>Conteúdo um<a class="headerlink" href="#conteudo-um" title="Permalink to this headline">¶</a></h1>
-<p>amsdmasdmasa</p>
+  <div class="section" id="testes-unitarios-em-jest">
+<h1>Testes unitários em Jest<a class="headerlink" href="#testes-unitarios-em-jest" title="Permalink to this headline">¶</a></h1>
+<p>O objetivo desta atividade é construir e testar códigos escritos em JavaScript</p>
+<p>Dado o seguinte código :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sub</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">-</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">buildObject</span><span class="p">(</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">obj</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// faz a copia do objeto e cria uma key com o valor do i atual  e.g. {&#39;1&#39; : 1, &#39;2&#39;: 2}</span>
+    <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">obj</span><span class="p">,</span> <span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="o">:</span> <span class="nx">i</span> <span class="p">};</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sumPositiveNumber</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="o">||</span> <span class="nx">b</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">&quot;Not allowed zero or negative numbers&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">sum</span><span class="p">,</span> <span class="nx">sub</span><span class="p">,</span> <span class="nx">buildObject</span><span class="p">,</span> <span class="nx">sumPositiveNumber</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>O código acima possui quatro funções em declaras em JavaScript.
+A seguir avalia o código de testes para executar essas funções e tentar validar sua corretude :</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">sum</span><span class="p">,</span> <span class="nx">sub</span><span class="p">,</span> <span class="nx">buildObject</span><span class="p">,</span> <span class="nx">sumPositiveNumber</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;../src&quot;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Expect to be&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;Sum 2 + 3 and sub 3 always shold be equal 2&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">sub</span><span class="p">(</span><span class="nx">sum</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Expect to equal&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;Should correctly build object&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">buildObject</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">obj</span><span class="p">).</span><span class="nx">toEqual</span><span class="p">({</span> <span class="s2">&quot;1&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="o">:</span> <span class="mi">3</span> <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;Expect to throw exception&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">it</span><span class="p">(</span><span class="s2">&quot;Shouldn&#39;t sum unless both numbers are positive&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">sumPositiveNumber</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">toThrow</span><span class="p">(</span><span class="s2">&quot;Not allowed zero or negative numbers&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>O código acima requere as funções previamente declaras e executa as mesmas testando seus valores usando notações específicas e determinadas para definir os valores esperados pela execução do codigo, como o <code class="docutils literal notranslate"><span class="pre">expect</span> <span class="pre">toThrow</span></code> ou <code class="docutils literal notranslate"><span class="pre">expect</span> <span class="pre">toEqual</span></code>.
+Acesse a documentação do <a class="reference external" href="https://jestjs.io/">Jest</a> e veja as demais notações usadas para validação de resultados dos testes.</p>
 </div>
 
 
@@ -175,14 +237,14 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="../content.html" title="previous page">Post de atividades</a>
-    <a class='right-next' id="next-link" href="otherSubject.html" title="next page">Conteúdo dois</a>
+    <a class='right-next' id="next-link" href="otherSubject.html" title="next page">Atividade dois</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By The Jupyter Book Community<br/>
+          By Arthur Castro - acrc2@cin.ufpe.br / Aldiberg Junior - agcj2@cin.ufpe.br<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
